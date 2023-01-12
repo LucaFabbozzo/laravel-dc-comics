@@ -21,6 +21,8 @@
       <td>{{$comic->series}}</td>
       <td>{{$comic->type}}</td>
       <td><a class="btn btn-primary" href="{{route('comics.show', $comic)}}"><i class="fa-solid fa-eye"></i></a></td>
+       <td><a class="btn btn-warning" href="#"><i class="fa-regular fa-pen-to-square"></i></a></td>
+
     </tr>
     @empty
         <h1>Products not available</h1>
@@ -28,6 +30,9 @@
 
   </tbody>
 </table>
+
+ {{$comics->links()}}
+
     </div>
 @endsection
 
