@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('image');
             $table->float('price', 4, 2);
             $table->string('series', 100);
-            $table->date('sale_date');
+            $table->date('sale_date')->nullable();  
             $table->string('type', 20);
             $table->timestamps();
         });

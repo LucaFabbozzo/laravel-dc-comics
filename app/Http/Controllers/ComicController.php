@@ -44,6 +44,7 @@ class ComicController extends Controller
             $new_comic->slug = Comic::generateSlug($new_comic->title);
             $new_comic->image = $form_data['image'];
             $new_comic->type = $form_data['type'];
+            $new_comic->series = $form_data['series'];
             $new_comic->price = $form_data['price'];
             $new_comic->description = $form_data['description'];
             $new_comic->save();
