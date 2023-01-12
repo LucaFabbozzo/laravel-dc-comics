@@ -3,7 +3,7 @@
      <a href="{{route('home')}}">
         <img src="{{Vite::asset('resources/img/dc-logo.png')}}" alt="Logo">
     </a>
-    <a class="btn btn-success mx-5" href="{{route('comics.create')}}">Create a new comic</a>
+    <a class="btn btn-secondary mx-5 text-uppercase" href="{{route('comics.create')}}">Create new comic</a>
 </header>
 
 

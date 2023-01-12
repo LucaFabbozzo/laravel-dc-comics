@@ -2,8 +2,8 @@
 
 
 @section('content')
-    <div class="container">
-        <h1>Insert new comic</h1>
+    <div class="container py-4">
+        <h1 class="text-uppercase fs-4 pb-4">Insert new comic</h1>
     <form action="{{route('comics.store')}}" method="POST">
         @csrf
         <div class="mb-3">
@@ -20,7 +20,7 @@
         </div>
         <div class="mb-3">
             <label for="prize" class="form-label">Prize</label>
-            <input type="text" class="form-control" name="prize" id="prize" placeholder="insert the prize">
+            <input type="text" class="form-control" name="price" id="prize" placeholder="insert the prize">
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>

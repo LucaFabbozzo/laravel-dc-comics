@@ -3,7 +3,7 @@
 
 @section('content')
   <div class="container">
-        <h1>Comics</h1>
+        <h1 class="text-uppercase fs-4 pb-4">Comics</h1>
   <table class="table table-striped">
   <thead>
     <tr>
