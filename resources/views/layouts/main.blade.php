@@ -15,6 +15,11 @@
 14. in store creo una nuova istanza con in dati ricevuti in request, li salvo nel db e redirect alla show passando la nuova istanza inserita --}}
 
 
+{{-- creare i campi fillabili nel model per lo store dei dati
+aggiungere le funzionalità di CREATE e DELETE
+effettuare la validazione dei dati con output dei messaggi di errore --}}
+
+
 
 
 
