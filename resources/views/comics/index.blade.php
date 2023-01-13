@@ -3,7 +3,7 @@
 
 @section('content')
   <div class="container">
-        <h1 class="text-uppercase fs-4 pb-4">Comics</h1>
+        <h1 class="text-uppercase fs-5 fw-bold pb-4">Comics List</h1>
   @if (session('deleted'))
   {{-- mostro tutto questo solo se è presente la variabile di sessione 'deleted' --}}
   <div>
@@ -28,8 +28,8 @@
       <td>{{$comic->title}}</td>
       <td>{{$comic->series}}</td>
       <td>{{$comic->type}}</td>
-      <td><a class="btn btn-info" href="{{route('comics.show', $comic)}}"><i class="fa-solid fa-eye"></i></a></td>
-      <td><a class="btn btn-success" href="{{route('comics.edit', $comic)}}"><i class="fa-regular fa-pen-to-square"></i></a></td>
+      <td><a class="btn btn-outline-primary" href="{{route('comics.show', $comic)}}"><i class="fa-solid fa-eye"></i></a></td>
+      <td><a class="btn btn-outline-success" href="{{route('comics.edit', $comic)}}"><i class="fa-regular fa-pen-to-square"></i></a></td>
       <td>
         @include('partials.form-delete', ['title'=>$comic->title, 'id'=>$comic->id])
       </td>

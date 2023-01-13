@@ -2,8 +2,8 @@
 
 
 @section('content')
-    <div class="container py-4">
-        <h1 class="text-uppercase fs-4 pb-4">Insert new comic</h1>
+    <div class="container py-1">
+        <h1 class="text-uppercase fs-5 fw-bold pb-4">Insert new comic</h1>
         @if ($errors->any())
         <div class="alert alert-danger" role="alert">
             <ul>
