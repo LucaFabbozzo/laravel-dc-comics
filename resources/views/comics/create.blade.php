@@ -4,6 +4,15 @@
 @section('content')
     <div class="container py-4">
         <h1 class="text-uppercase fs-4 pb-4">Insert new comic</h1>
+        @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     <form action="{{route('comics.store')}}" method="POST">
         @csrf
         <div class="mb-3">
