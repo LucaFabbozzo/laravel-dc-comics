@@ -4,28 +4,62 @@
 @section('content')
     <div class="container py-4">
         <h1 class="text-uppercase fs-4 pb-4">Insert new comic</h1>
-    <form action="{{route('comics.update', $comic)}}" method="POST">
+        @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        <form action="{{route('comics.update', $comic)}}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
             <label for="title" class="form-label">Title *</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="insert title" value="{{$comic->title}}">
+            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="insert title" value="{{old('title', $comic->title)}}">
+            @error('title')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image *</label>
-            <input type="text" class="form-control" name="image" id="image" placeholder="insert the url of the image" value="{{$comic->image}}">
+            <input type="text" class="form-control @error('image') is-invalid @enderror" name="image" id="image" placeholder="insert the url of the image" value="{{old('image', $comic->image)}}">
+            @error('image')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="type" class="form-label">Type *</label>
-            <input type="text" class="form-control" name="type" id="type" placeholder="insert the type of the comic" value="{{$comic->type}}">
+            <input type="text" class="form-control @error('type') is-invalid @enderror" name="type" id="type" placeholder="insert the type of the comic" value="{{old('type', $comic->type)}}">
+            @error('type')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="series" class="form-label">Series *</label>
-            <input type="text" class="form-control" name="series" id="series" placeholder="insert the series" value="{{$comic->series}}">
+            <input type="text" class="form-control @error('series') is-invalid @enderror" name="series" id="series" placeholder="insert the series" value="{{old('series', $comic->series)}}">
+            @error('series')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
-            <label for="prize" class="form-label">Prize *</label>
-            <input type="text" class="form-control" name="price" id="prize" placeholder="insert the price" value="{{$comic->price}}">
+            <label for="prize" class="form-label">Price *</label>
+            <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" id="price" placeholder="insert the prize" value="{{old('price', $comic->price)}}">
+            @error('price')
+                <div class="invalid-feedback">
+                     {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>

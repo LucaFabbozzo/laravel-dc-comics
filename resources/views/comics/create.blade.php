@@ -16,24 +16,49 @@
     <form action="{{route('comics.store')}}" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="insert title" value="Prova">
+            <label for="title" class="form-label">Title *</label>
+            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title" placeholder="insert title" value="{{old('title')}}">
+            @error('title')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">Image</label>
-            <input type="text" class="form-control" name="image" id="image" placeholder="insert the url of the image" value="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX">
+            <label for="image" class="form-label">Image *</label>
+            <input type="text" class="form-control @error('image') is-invalid @enderror" name="image" id="image" placeholder="insert the url of the image" value="{{old('image')}}">
+            @error('image')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
-            <label for="type" class="form-label">Type</label>
-            <input type="text" class="form-control" name="type" id="type" placeholder="insert the type of the comic" value="prova">
+            <label for="type" class="form-label">Type *</label>
+            <input type="text" class="form-control @error('type') is-invalid @enderror" name="type" id="type" placeholder="insert the type of the comic" value="{{old('type')}}">
+            @error('type')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
-            <label for="series" class="form-label">Series</label>
-            <input type="text" class="form-control" name="series" id="series" placeholder="insert the series" value="prova">
+            <label for="series" class="form-label">Series *</label>
+            <input type="text" class="form-control @error('series') is-invalid @enderror" name="series" id="series" placeholder="insert the series" value="{{old('series')}}">
+            @error('series')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
-            <label for="prize" class="form-label">Prize</label>
-            <input type="text" class="form-control" name="price" id="prize" placeholder="insert the prize" value="10.20">
+            <label for="prize" class="form-label">Price *</label>
+            <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" id="price" placeholder="insert the prize" value="{{old('price')}}">
+            @error('price')
+                <div class="invalid-feedback">
+                     {{$message}}
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
