@@ -75,7 +75,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+       return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -87,7 +87,18 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+    // se il titolo e stato modificato genere un nuovo slug altrimenti utilizzo il vecchio
+        $form_data = $request->all();
+
+        if($form_data['title'] != $comic->title) {
+            $form_data['slug'] = Comic::generateSlug($form_data['title']);
+        } else {
+            $form_data['slug'] = $comic->slug;
+        }
+
+        $comic->update($form_data);
+
+        return redirect()->route('comics.show', $comic);
     }
 
     /**

@@ -21,7 +21,7 @@
       <td>{{$comic->series}}</td>
       <td>{{$comic->type}}</td>
       <td><a class="btn btn-info" href="{{route('comics.show', $comic)}}"><i class="fa-solid fa-eye"></i></a></td>
-      <td><a class="btn btn-success" href="#"><i class="fa-regular fa-pen-to-square"></i></a></td>
+      <td><a class="btn btn-success" href="{{route('comics.edit', $comic)}}"><i class="fa-regular fa-pen-to-square"></i></a></td>
       <td><a class="btn btn-danger" href="#"><i class="fa-regular fa-trash-can"></i></a></td>
 
     </tr>
