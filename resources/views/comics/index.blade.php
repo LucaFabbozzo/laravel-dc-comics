@@ -4,6 +4,14 @@
 @section('content')
   <div class="container">
         <h1 class="text-uppercase fs-4 pb-4">Comics</h1>
+  @if (session('deleted'))
+  {{-- mostro tutto questo solo se è presente la variabile di sessione 'deleted' --}}
+  <div>
+    <div class="alert alert-success" role="alert">
+        {{session('deleted')}}
+    </div>
+  </div>
+  @endif
   <table class="table table-striped">
   <thead>
     <tr>
@@ -23,7 +31,9 @@
       <td><a class="btn btn-info" href="{{route('comics.show', $comic)}}"><i class="fa-solid fa-eye"></i></a></td>
       <td><a class="btn btn-success" href="{{route('comics.edit', $comic)}}"><i class="fa-regular fa-pen-to-square"></i></a></td>
       <td>
-        <form class="d-inline" action="{{route('comics.destroy', $comic)}}" method="POST">
+        <form
+            onsubmit="return confirm('Confirm the elimination of {{$comic->title}}?')"
+            class="d-inline" action="{{route('comics.destroy', $comic)}}" method="POST">
             @csrf
             @method('DELETE')
             <button class="btn btn-danger" title="delete"><i class="fa-regular fa-trash-can"></i></button>
