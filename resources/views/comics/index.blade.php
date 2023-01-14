@@ -16,7 +16,6 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Image</th>
       <th scope="col">Title</th>
       <th scope="col">Series</th>
       <th scope="col">Type</th>
