@@ -26,7 +26,6 @@
     @forelse ($comics as $comic)
     <tr>
       <td>{{$comic->id}}</td>
-      <td><img class="thumbnail" src="{{$comic->image}}" alt="{{$comic->title}}"></td>
       <td>{{$comic->title}}</td>
       <td>{{$comic->series}}</td>
       <td>{{$comic->type}}</td>
