@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="container py-1">
+    <div class="container container-lf">
         <h1 class="text-uppercase fs-5 fw-bold pb-4">Insert new comic</h1>
         @if ($errors->any())
         <div class="alert alert-danger" role="alert">
@@ -13,7 +13,7 @@
             </ul>
         </div>
         @endif
-    <form action="{{route('comics.store')}}" method="POST">
+    <form class="pb-5" action="{{route('comics.store')}}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title *</label>
@@ -53,7 +53,7 @@
         </div>
         <div class="mb-3">
             <label for="prize" class="form-label">Price *</label>
-            <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" id="price" placeholder="insert the prize" value="{{old('price')}}">
+            <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" id="price" placeholder="insert the price" value="{{old('price')}}">
             @error('price')
                 <div class="invalid-feedback">
                      {{$message}}

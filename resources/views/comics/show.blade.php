@@ -2,9 +2,9 @@
 
 
 @section('content')
-    <div class="container">
-        <div class="card m-auto p-4 mb-5" style="width: 40rem;">
-         <img src="{{$comic->image}}" class="card-img-top" alt="{{$comic->title}}">
+    <div class="container container-lf">
+        <div class="card m-auto p-4 mb-5" style="width: 100%;">
+         <img style="width: 30%" src="{{$comic->image}}" class="card-img-top" alt="{{$comic->title}}">
             <div class="card-body">
                 <h4 class="card-title fs-2">{{$comic->title}}</h4>
                 <p class="card-title fs-3">{{$comic->type}}</p>

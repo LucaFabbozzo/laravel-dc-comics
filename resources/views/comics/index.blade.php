@@ -2,7 +2,7 @@
 
 
 @section('content')
-  <div class="container">
+  <div class="container container-lf py-5">
         <h1 class="text-uppercase fs-5 fw-bold pb-4">Comics List</h1>
   @if (session('deleted'))
   {{-- mostro tutto questo solo se è presente la variabile di sessione 'deleted' --}}

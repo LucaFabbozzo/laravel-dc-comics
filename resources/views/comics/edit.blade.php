@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="container py-1">
+    <div class="container container-lf">
         <h1 class="text-uppercase fs-5 fw-bold pb-4">Insert new comic</h1>
         @if ($errors->any())
         <div class="alert alert-danger" role="alert">
@@ -13,7 +13,7 @@
             </ul>
         </div>
         @endif
-        <form action="{{route('comics.update', $comic)}}" method="POST">
+        <form class="pb-5" action="{{route('comics.update', $comic)}}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
