@@ -16,6 +16,7 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
+      <th scope="col">Image</th>
       <th scope="col">Title</th>
       <th scope="col">Series</th>
       <th scope="col">Type</th>
@@ -25,6 +26,7 @@
     @forelse ($comics as $comic)
     <tr>
       <td>{{$comic->id}}</td>
+      <td><img class="thumbnail" src="{{$comic->image}}" alt="{{$comic->title}}"></td>
       <td>{{$comic->title}}</td>
       <td>{{$comic->series}}</td>
       <td>{{$comic->type}}</td>

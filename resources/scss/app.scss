@@ -10,6 +10,17 @@ nav {
     box-shadow: 0px 2px 6px rgba($color: #8f8f8f, $alpha: 0.3);
 }
 
+tr {
+    td {
+        .thumbnail {
+                width: 70px;
+                height: 120px;
+                object-fit: cover;
+                object-position: center;
+            }
+    }
+}
+
 .container-lf {
     margin-top: 100px;
 }
