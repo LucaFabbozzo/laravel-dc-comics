@@ -3,6 +3,7 @@
 
 @section('content')
     <div class="container container-lf">
+        <a href="{{route('comics.index')}}" class="btn btn-outline-secondary text-uppercase my-4">Back to the List</a>
         <h1 class="text-uppercase fs-5 fw-bold pb-4">Insert new comic</h1>
         @if ($errors->any())
         <div class="alert alert-danger" role="alert">
