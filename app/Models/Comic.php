@@ -13,6 +13,7 @@ class Comic extends Model
         protected $fillable = ['title', 'image', 'type', 'series', 'price', 'description', 'slug'];
 
         public static function generateSlug($string){
+        //bisogna importare il str (string)
         $slug = Str::slug($string, '-');
         /*
             - salvare lo slug originale
